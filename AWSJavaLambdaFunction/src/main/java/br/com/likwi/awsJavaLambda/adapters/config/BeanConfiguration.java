@@ -7,15 +7,12 @@ import br.com.likwi.awsJavaLambda.adapters.outbound.persistence.entity.PetEntity
 import br.com.likwi.awsJavaLambda.core.domain.PetDomain;
 import br.com.likwi.awsJavaLambda.core.ports.PetPersistencePort;
 import br.com.likwi.awsJavaLambda.core.ports.PetServicePort;
-import br.com.likwi.awsJavaLambda.core.service.PetServicePortImpl;
+import br.com.likwi.awsJavaLambda.core.service.PetService;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 
 @Configuration
 @ComponentScan(basePackageClasses = Application.class)
@@ -77,6 +74,6 @@ public class BeanConfiguration {
 
     @Bean
     PetServicePort petServicePort(PetPersistencePort petPersistencePort) {
-        return new PetServicePortImpl(petPersistencePort);
+        return new PetService(petPersistencePort);
     }
 }

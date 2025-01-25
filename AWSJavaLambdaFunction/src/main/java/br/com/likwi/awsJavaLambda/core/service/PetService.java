@@ -7,11 +7,11 @@ import br.com.likwi.awsJavaLambda.core.ports.PetServicePort;
 
 import java.util.List;
 
-public class PetServicePortImpl implements PetServicePort {
+public class PetService implements PetServicePort {
 
     private final PetPersistencePort petPersistencePort;
 
-    public PetServicePortImpl(PetPersistencePort petPersistencePort) {
+    public PetService(PetPersistencePort petPersistencePort) {
         this.petPersistencePort = petPersistencePort;
     }
 

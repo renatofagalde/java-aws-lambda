@@ -14,13 +14,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class PetPersistencePortImpl implements PetPersistencePort {
+public class PetPersistence implements PetPersistencePort {
 
     private final PetRepository petRepository;
     private final ModelMapper modelMapper;
 
 
-    public PetPersistencePortImpl(PetRepository petRepository, ModelMapper modelMapper) {
+    public PetPersistence(PetRepository petRepository, ModelMapper modelMapper) {
         this.petRepository = petRepository;
         this.modelMapper = modelMapper;
     }
